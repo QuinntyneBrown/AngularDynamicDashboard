@@ -1,1 +1,1 @@
-# AngularDynamaicDashboard
+# AngularDynamicDashboard
