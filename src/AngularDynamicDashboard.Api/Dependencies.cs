@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using System;
 
+
 namespace AngularDynamicDashboard.Api
 {
     public static class Dependencies
@@ -61,7 +62,8 @@ namespace AngularDynamicDashboard.Api
                 .EnableSensitiveDataLogging();
             });
 
-            services.AddControllers();
+            services.AddControllers()
+                .AddNewtonsoftJson();
         }
     }
 }

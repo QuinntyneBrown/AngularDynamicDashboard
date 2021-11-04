@@ -1,7 +1,21 @@
 <form novalidate autocomplete='off' spellcheck='false' [formGroup]='form'>
-    <mat-form-field>
-        <mat-label>Name</mat-label>
-        <input matInput placeholder='Name'
-        formControlName='name' required>
-    </mat-form-field>
+  <mat-form-field class="g-form-field">
+    <mat-label>Top</mat-label>
+    <input matInput type="text" formControlName="top">
+  </mat-form-field>
+
+  <mat-form-field class="g-form-field">
+    <mat-label>Height</mat-label>
+    <input matInput type="text" formControlName="height">
+  </mat-form-field>
+
+  <mat-form-field class="g-form-field">
+    <mat-label>Left</mat-label>
+    <input matInput type="text" formControlName="left">
+  </mat-form-field>
+
+  <mat-form-field class="g-form-field">
+    <mat-label>Width</mat-label>
+    <input matInput type="text"  formControlName="width">
+  </mat-form-field>
 </form>

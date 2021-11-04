@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatDrawer } from '@angular/material/sidenav';
-import { DashboardCardService } from '@api';
+import { DashboardCard, DashboardCardService } from '@api';
 import { CachedQueryService } from '@core';
 import { map, tap } from 'rxjs/operators';
 
@@ -13,12 +13,6 @@ import { map, tap } from 'rxjs/operators';
 export class AppComponent {
 
   @ViewChild(MatDrawer, { static: false }) public drawer: MatDrawer | undefined;
-
-  public form = new FormGroup({
-    dashboardCardId: new FormControl(null,[]),
-    cardType: new FormControl(null,[]),
-    settings: new FormControl({},[])
-  });
 
   public vm$ = this._cachedQueryService
   .getDashboardCards()
@@ -49,9 +43,7 @@ export class AppComponent {
     this.drawer.open();
   }
 
-  public save() {
-
-    let dashboardCard = this.form.value;
+  public save(dashboardCard: DashboardCard) {
 
     let obs$ = dashboardCard.dashboardCardId
     ? this._dashboardCardService.update({ dashboardCard })

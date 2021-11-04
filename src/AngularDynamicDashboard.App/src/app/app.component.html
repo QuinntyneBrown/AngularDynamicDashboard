@@ -11,40 +11,17 @@
       </button>
     </div>
 
-
-
-    <form [formGroup]="form">
+    <form [formGroup]="vm.form">
       <mat-form-field class="g-form-field">
         <mat-label>Card Type</mat-label>
         <input matInput type="text" formControlName="cardType">
       </mat-form-field>
 
-      <ng-container >
-        <mat-form-field class="g-form-field">
-          <mat-label>Top</mat-label>
-          <input matInput type="text">
-        </mat-form-field>
-
-        <mat-form-field class="g-form-field">
-          <mat-label>Height</mat-label>
-          <input matInput type="text">
-        </mat-form-field>
-
-        <mat-form-field class="g-form-field">
-          <mat-label>Left</mat-label>
-          <input matInput type="text">
-        </mat-form-field>
-
-        <mat-form-field class="g-form-field">
-          <mat-label>Width</mat-label>
-          <input matInput type="text">
-        </mat-form-field>
-
-      </ng-container>
+      <app-dashboard-card-settings-editor formControlName="settings"></app-dashboard-card-settings-editor>
 
       <div class="g-actions">
         <button mat-stroked-button (click)="drawer.close()">Cancel</button>
-        <button mat-raised-button (click)="save()">Save</button>
+        <button mat-raised-button (click)="save(vm.form.value)">Save</button>
       </div>
     </form>
   </mat-drawer>

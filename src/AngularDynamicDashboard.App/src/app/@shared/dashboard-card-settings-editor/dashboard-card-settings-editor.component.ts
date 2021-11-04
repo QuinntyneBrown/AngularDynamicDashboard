@@ -1,7 +1,6 @@
 import { Component, ElementRef, forwardRef, Input, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { AbstractControl, ControlValueAccessor, FormArray, FormControl, FormGroup, NG_VALIDATORS, NG_VALUE_ACCESSOR, ValidationErrors, Validator, Validators } from '@angular/forms';
-import { takeUntil, tap } from 'rxjs/operators';
-import { fromEvent, Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 import { BaseControlValueAccessor } from '@core';
 
 @Component({
@@ -24,7 +23,10 @@ import { BaseControlValueAccessor } from '@core';
 export class DashboardCardSettingsEditorComponent extends BaseControlValueAccessor implements ControlValueAccessor,  Validator, OnDestroy  {
 
   public form = new FormGroup({
-    name: new FormControl(null, [Validators.required]),
+    top: new FormControl(null, [Validators.required]),
+    height: new FormControl(null, [Validators.required]),
+    left: new FormControl(null, [Validators.required]),
+    width: new FormControl(null, [Validators.required])
   });
 
   constructor(
