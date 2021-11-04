@@ -1,8 +1,9 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ComponentFactoryResolver, ComponentRef, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatDrawer } from '@angular/material/sidenav';
 import { DashboardCard, DashboardCardService } from '@api';
 import { CachedQueryService } from '@core';
+import { DashboardCardComponent, DashboardMetricCardComponent } from '@shared';
 import { map, tap } from 'rxjs/operators';
 
 @Component({
@@ -10,9 +11,12 @@ import { map, tap } from 'rxjs/operators';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent  {
 
   @ViewChild(MatDrawer, { static: false }) public drawer: MatDrawer | undefined;
+
+  @ViewChild("target", { static: false, read: ViewContainerRef })
+  target: ViewContainerRef;
 
   public vm$ = this._cachedQueryService
   .getDashboardCards()
@@ -34,7 +38,8 @@ export class AppComponent {
 
   constructor(
     private readonly _cachedQueryService: CachedQueryService,
-    private readonly _dashboardCardService: DashboardCardService
+    private readonly _dashboardCardService: DashboardCardService,
+    private readonly _componentFactoryResolver: ComponentFactoryResolver
   ) {
 
   }
