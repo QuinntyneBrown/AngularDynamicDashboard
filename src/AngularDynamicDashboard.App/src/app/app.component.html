@@ -1,0 +1,61 @@
+<mat-drawer-container *ngIf="vm$ | async as vm">
+  <mat-drawer #drawer mode="over" [opened]="false">
+
+    <div class="drawer__header">
+      <h1>Create Dashboard Card</h1>
+
+      <button mat-icon-button (click)="drawer.close()" tabindex="-1">
+        <mat-icon>
+          close
+        </mat-icon>
+      </button>
+    </div>
+
+
+
+    <form [formGroup]="form">
+      <mat-form-field class="g-form-field">
+        <mat-label>Card Type</mat-label>
+        <input matInput type="text" formControlName="cardType">
+      </mat-form-field>
+
+      <ng-container >
+        <mat-form-field class="g-form-field">
+          <mat-label>Top</mat-label>
+          <input matInput type="text">
+        </mat-form-field>
+
+        <mat-form-field class="g-form-field">
+          <mat-label>Height</mat-label>
+          <input matInput type="text">
+        </mat-form-field>
+
+        <mat-form-field class="g-form-field">
+          <mat-label>Left</mat-label>
+          <input matInput type="text">
+        </mat-form-field>
+
+        <mat-form-field class="g-form-field">
+          <mat-label>Width</mat-label>
+          <input matInput type="text">
+        </mat-form-field>
+
+      </ng-container>
+
+      <div class="g-actions">
+        <button mat-stroked-button (click)="drawer.close()">Cancel</button>
+        <button mat-raised-button (click)="save()">Save</button>
+      </div>
+    </form>
+  </mat-drawer>
+  <mat-drawer-content>
+
+  </mat-drawer-content>
+</mat-drawer-container>
+
+<button mat-fab (click)="openDrawer()">
+  <mat-icon>
+    add
+  </mat-icon>
+</button>
+

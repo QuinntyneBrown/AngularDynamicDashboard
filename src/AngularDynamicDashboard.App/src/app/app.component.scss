@@ -1,0 +1,54 @@
+:host {
+  mat-drawer-content {
+    display: grid;
+    position: relative;
+    box-sizing: border-box;
+    height: 100vh;
+    margin:0;
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  mat-drawer {
+    padding:45px;
+    min-width: 300px;
+  }
+
+  .drawer__header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    place-items: center start;
+    gap:60px;
+    margin-bottom: 60px;
+
+    h1 {
+      margin:0;
+      padding:0;
+    }
+  }
+
+  button[mat-fab] {
+    position: absolute;
+    bottom: 45px;
+    right: 45px;
+    box-sizing: border-box;
+    z-index: 1;
+  }
+
+  form {
+    display: block;
+    margin-bottom: 60px;
+  }
+
+  .g-form-field {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .g-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: right;
+    place-items: center end;
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "projects": null,
+  "path": "C:\\Projects\\AngularDynamicDashboard",
+  "solutionName": null,
+  "rootNamespace": null,
+  "domainNamespace": "AngularDynamicDashboard.Api",
+  "applicationNamespace": "AngularDynamicDashboard.Api",
+  "infrastructureNamespace": "AngularDynamicDashboard.Api",
+  "apiNamespace": "AngularDynamicDashboard.Api",
+  "domainDirectory": "C:\\Projects\\AngularDynamicDashboard\\src\\AngularDynamicDashboard.Api",
+  "applicationDirectory": "C:\\Projects\\AngularDynamicDashboard\\src\\AngularDynamicDashboard.Api",
+  "infrastructureDirectory": "C:\\Projects\\AngularDynamicDashboard\\src\\AngularDynamicDashboard.Api",
+  "apiDirectory": "C:\\Projects\\AngularDynamicDashboard\\src\\AngularDynamicDashboard.Api",
+  "appDirectories": [ "C:\\Projects\\AngularDynamicDashboard\\src\\AngularDynamicDashboard.App" ],
+  "buildingBlocksCoreNamespace": "BuildingBlocks.Core",
+  "buildingBlocksEventStoreNamespace": "BuildingBlocks.EventStore",
+  "store": null,
+  "namespace": null,
+  "domain": null,
+  "core": null,
+  "api": null,
+  "entityIdDataType": null,
+  "sourceFolder": "src",
+  "testFolder": null,
+  "dbContext": "AngularDynamicDashboardDbContext",
+  "eventSourcing": false,
+  "resources": [
+    "DashboardCard",
+    "StoredEvent"
+  ]
+}
